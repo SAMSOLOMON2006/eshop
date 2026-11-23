@@ -1,0 +1,213 @@
+
+/* ==========================================
+   LOUIS & SONS - PREMIUM PRODUCT CARD
+========================================== */
+
+.item {
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    background: transparent;
+
+    box-sizing: border-box;
+
+    transition: transform 0.4s ease;
+}
+
+/* ==========================================
+   PRODUCT IMAGE
+========================================== */
+
+.item-image-link {
+    display: block;
+
+    width: 100%;
+
+    text-decoration: none;
+
+    overflow: hidden;
+
+    background: #ECEAE4;
+}
+
+.item-image-container {
+    width: 100%;
+
+    aspect-ratio: 3 / 4;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.item-image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* IMAGE HOVER */
+
+.item:hover .item-image {
+    transform: scale(1.045);
+}
+
+/* ==========================================
+   VIEW PRODUCT LABEL
+========================================== */
+
+.item-view-label {
+    position: absolute;
+
+    bottom: 15px;
+    left: 50%;
+
+    transform: translate(-50%, 12px);
+
+    padding: 11px 18px;
+
+    background: rgba(247, 246, 242, 0.94);
+
+    color: #292929;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+}
+
+.item:hover .item-view-label {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+/* ==========================================
+   PRODUCT DETAILS
+========================================== */
+
+.item-details {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+
+    padding: 13px 0 5px;
+
+    box-sizing: border-box;
+}
+
+/* PRODUCT NAME */
+
+.item-name {
+    display: block;
+
+    color: #292929 !important;
+
+    text-decoration: none !important;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    line-height: 1.6;
+
+    transition: color 0.3s ease;
+}
+
+.item-name:hover {
+    color: #929B70 !important;
+}
+
+/* ==========================================
+   PRODUCT PRICES
+========================================== */
+
+.item-prices {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+/* CURRENT PRICE */
+
+.item-price-new {
+    color: #292929;
+
+    font-size: 15px;
+    font-weight: 650;
+}
+
+/* ORIGINAL PRICE */
+
+.item-price-old {
+    color: #99958B;
+
+    font-size: 13px;
+    font-weight: 400;
+
+    text-decoration: line-through;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 650px) {
+
+    .item-details {
+        gap: 7px;
+        padding-top: 10px;
+    }
+
+    .item-name {
+        font-size: 12px;
+    }
+
+    .item-price-new {
+        font-size: 14px;
+    }
+
+    .item-price-old {
+        font-size: 12px;
+    }
+
+    .item-view-label {
+        display: none;
+    }
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .item,
+    .item-image,
+    .item-view-label,
+    .item-name {
+        transition: none;
+    }
+
+    .item-view-label {
+        display: none;
+    }
+}

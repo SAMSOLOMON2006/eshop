@@ -1,0 +1,389 @@
+
+/* ==========================================
+   LOUIS & SONS - ANIMATED EXCLUSIVE OFFERS
+========================================== */
+
+.offers {
+    width: 100%;
+    min-height: 580px;
+
+    padding: 75px 8%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+    gap: 50px;
+
+    background: #EEECE4;
+
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* ==========================================
+   SCROLL REVEAL
+========================================== */
+
+.offers [data-offer-reveal] {
+    opacity: 0;
+    transform: translateY(35px);
+}
+
+.offers [data-offer-reveal].offer-visible {
+    animation: offerReveal 0.9s
+        cubic-bezier(0.2, 0.7, 0.2, 1)
+        forwards;
+}
+
+.offers-left .offers-eyebrow {
+    animation-delay: 0s;
+}
+
+.offers-left h1 {
+    animation-delay: 0.12s;
+}
+
+.offers-left .offers-line {
+    animation-delay: 0.22s;
+}
+
+.offers-left p {
+    animation-delay: 0.32s;
+}
+
+.offers-left .offers-button {
+    animation-delay: 0.45s;
+}
+
+.offers-left .offers-caption {
+    animation-delay: 0.55s;
+}
+
+.offers-right {
+    animation-delay: 0.25s !important;
+}
+
+/* ==========================================
+   LEFT CONTENT
+========================================== */
+
+.offers-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    justify-content: center;
+
+    position: relative;
+    z-index: 2;
+}
+
+/* EYEBROW */
+
+.offers-eyebrow {
+    color: #929B70;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 2.8px;
+
+    margin-bottom: 25px;
+}
+
+/* HEADING */
+
+.offers-left h1 {
+    margin: 0;
+
+    color: #191919;
+
+    font-size: clamp(48px, 5.5vw, 76px);
+
+    font-weight: 700;
+
+    letter-spacing: -3.5px;
+    line-height: 1.12;
+}
+
+.offers-left h1 span {
+    color: #929B70;
+}
+
+/* HEADING LINE */
+
+.offers-line {
+    width: 65px;
+    height: 2px;
+
+    background: #929B70;
+
+    margin-top: 28px;
+}
+
+/* DESCRIPTION */
+
+.offers-left p {
+    margin: 22px 0 0;
+
+    color: #77756F;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 1.7px;
+    line-height: 1.8;
+}
+
+/* ==========================================
+   CTA BUTTON
+========================================== */
+
+.offers-button {
+    min-width: 185px;
+    min-height: 54px;
+
+    margin-top: 32px;
+    padding: 0 23px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background: #191919;
+    color: #FFFFFF;
+
+    text-decoration: none;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    box-sizing: border-box;
+
+    transition:
+        background 0.35s ease,
+        transform 0.35s ease;
+}
+
+.offers-button:hover {
+    background: #929B70;
+    transform: translateY(-4px);
+}
+
+.offers-arrow {
+    font-size: 22px;
+    transition: transform 0.3s ease;
+}
+
+.offers-button:hover .offers-arrow {
+    transform: translateX(6px);
+}
+
+/* CAPTION */
+
+.offers-caption {
+    margin-top: 55px;
+
+    color: #99958B;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 1.7px;
+}
+
+/* ==========================================
+   RIGHT IMAGE
+========================================== */
+
+.offers-right {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 0;
+}
+
+.offers-image-container {
+    width: 100%;
+    height: 440px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.offers-image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+
+    animation: offersFloat 5s ease-in-out infinite;
+
+    transition: transform 0.6s ease;
+}
+
+.offers-image-container:hover .offers-image {
+    transform: scale(1.035);
+}
+
+/* IMAGE LABEL */
+
+.offers-image-label {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+
+    padding: 12px 5px;
+
+    border-bottom: 1px solid #D4D0C4;
+
+    color: #89877F;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 1.8px;
+}
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes offerReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes offersFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .offers {
+        padding: 65px 5%;
+        gap: 25px;
+        min-height: 500px;
+    }
+
+    .offers-left h1 {
+        font-size: 55px;
+        letter-spacing: -2px;
+    }
+
+    .offers-image-container {
+        height: 380px;
+    }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 650px) {
+
+    .offers {
+        grid-template-columns: 1fr;
+
+        padding: 60px 7% 45px;
+
+        gap: 30px;
+    }
+
+    .offers-left h1 {
+        font-size: clamp(43px, 10vw, 60px);
+        letter-spacing: -2px;
+    }
+
+    .offers-eyebrow {
+        font-size: 9px;
+    }
+
+    .offers-left p {
+        font-size: 10px;
+    }
+
+    .offers-caption {
+        margin-top: 35px;
+    }
+
+    .offers-image-container {
+        height: 340px;
+    }
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 380px) {
+
+    .offers {
+        padding: 45px 5% 35px;
+    }
+
+    .offers-left h1 {
+        font-size: 40px;
+    }
+
+    .offers-image-container {
+        height: 280px;
+    }
+}
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .offers [data-offer-reveal] {
+        opacity: 1;
+        transform: none;
+        animation: none !important;
+    }
+
+    .offers-image {
+        animation: none;
+    }
+
+    .offers-button,
+    .offers-arrow {
+        transition: none;
+    }
+}

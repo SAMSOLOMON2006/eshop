@@ -1,0 +1,302 @@
+
+/* ==========================================
+   LOUIS & SONS - NEW COLLECTIONS
+   PREMIUM EDITORIAL DESIGN
+========================================== */
+
+.new-collections {
+    width: 100%;
+
+    min-height: auto;
+
+    padding: 90px 8% 85px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: #F7F6F2;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+/* ==========================================
+   SCROLL REVEAL ANIMATION
+========================================== */
+
+.new-collections [data-collection-reveal] {
+    opacity: 0;
+    transform: translateY(35px);
+}
+
+.new-collections [data-collection-reveal].collection-visible {
+    animation: collectionReveal 0.85s
+        cubic-bezier(0.2, 0.7, 0.2, 1)
+        var(--collection-delay, 0ms) forwards;
+}
+
+/* ==========================================
+   SECTION HEADER
+========================================== */
+
+.collections-header {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    margin-bottom: 55px;
+}
+
+/* EYEBROW */
+
+.collections-eyebrow {
+    color: #929B70;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 16px;
+}
+
+/* MAIN HEADING */
+
+.collections-header h1 {
+    margin: 0;
+
+    color: #171717;
+
+    font-size: clamp(30px, 4vw, 46px);
+
+    font-weight: 700;
+
+    letter-spacing: -1.8px;
+
+    line-height: 1.2;
+}
+
+.collections-header h1 span {
+    color: #929B70;
+}
+
+/* HEADING LINE */
+
+.collections-heading-line {
+    width: 55px;
+    height: 2px;
+
+    margin-top: 22px;
+
+    background: #929B70;
+}
+
+/* DESCRIPTION */
+
+.collections-header p {
+    max-width: 470px;
+
+    margin: 20px 0 0;
+
+    color: #77756F;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+/* ==========================================
+   PRODUCT GRID
+========================================== */
+
+.collections {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 24px;
+
+    align-items: start;
+
+    margin-top: 0;
+
+    box-sizing: border-box;
+}
+
+/* PRODUCT CARD */
+
+.collection-card {
+    width: 100%;
+    min-width: 0;
+
+    transition: transform 0.4s ease;
+}
+
+.collection-card.collection-visible {
+    animation-delay: var(--collection-delay, 0ms);
+}
+
+.collection-card:hover {
+    transform: translateY(-6px);
+}
+
+/* ITEM WIDTH FIX */
+
+.collection-card .item {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.collections-footer {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 65px;
+
+    color: #929087;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+.collections-footer-line {
+    width: 45px;
+    height: 1px;
+
+    background: #B4B19F;
+}
+
+/* ==========================================
+   ANIMATION
+========================================== */
+
+@keyframes collectionReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .new-collections {
+        padding: 75px 5% 65px;
+    }
+
+    .collections {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px 22px;
+    }
+
+    .collections-header {
+        margin-bottom: 40px;
+    }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 650px) {
+
+    .new-collections {
+        padding: 60px 6% 50px;
+    }
+
+    .collections-header {
+        margin-bottom: 35px;
+    }
+
+    .collections-header h1 {
+        font-size: 28px;
+        letter-spacing: -1px;
+    }
+
+    .collections-header p {
+        font-size: 12px;
+        max-width: 320px;
+    }
+
+    .collections {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px 14px;
+    }
+
+    .collections-footer {
+        margin-top: 45px;
+        font-size: 8px;
+    }
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 380px) {
+
+    .new-collections {
+        padding: 45px 5% 40px;
+    }
+
+    .collections-header h1 {
+        font-size: 24px;
+    }
+
+    .collections {
+        gap: 20px 10px;
+    }
+
+    .collections-eyebrow {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .new-collections [data-collection-reveal] {
+        opacity: 1;
+        transform: none;
+        animation: none !important;
+    }
+
+    .collection-card {
+        transition: none;
+    }
+}

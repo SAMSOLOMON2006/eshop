@@ -1,0 +1,22 @@
+
+/* Cyberpunk Neon Breadcrumb */
+.breadcrum {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #00ffff;
+    text-shadow: 0px 0px 8px #00ffff;
+    background: rgba(13, 13, 13, 0.8);
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #00ffff;
+    width: fit-content;
+    margin: 20px auto;
+}
+
+.breadcrum img {
+    width: 15px;
+    margin: 0 10px;
+    filter: drop-shadow(0px 0px 5px #ff00ff);
+}

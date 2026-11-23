@@ -1,0 +1,513 @@
+
+/* ==========================================
+   LOUIS & SONS - GLASSMORPHISM NAVBAR
+========================================== */
+
+.navbar {
+    width: 100%;
+    min-height: 88px;
+    padding: 0 7.5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+
+    /* TRANSPARENT GLASS */
+    background: rgba(247, 246, 242, 0.911);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border-bottom: 1px solid rgba(220, 218, 213, 0.5);
+
+    /* REMOVE ALL GLOW */
+    box-shadow: none;
+    text-shadow: none;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   BRAND LOGO
+========================================== */
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.nav-logo img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+
+    filter: none;
+    box-shadow: none;
+}
+
+.nav-logo span {
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+    white-space: nowrap;
+
+    /* ANIMATED GRADIENT TEXT */
+    background: linear-gradient(
+        110deg,
+        #292929 10%,
+        #929B70 35%,
+        #C6A96B 55%,
+        #929B70 75%,
+        #292929 95%
+    );
+
+    background-size: 300% 100%;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: navbarGradient 7s ease infinite;
+
+    /* NO TEXT GLOW */
+    text-shadow: none !important;
+    filter: none !important;
+}
+
+/* ==========================================
+   CENTER NAVIGATION
+========================================== */
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 38px;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-menu a {
+    position: relative;
+
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+
+    white-space: nowrap;
+
+    background: linear-gradient(
+        110deg,
+        #292929 10%,
+        #929B70 35%,
+        #C6A96B 55%,
+        #929B70 75%,
+        #292929 95%
+    );
+
+    background-size: 300% 100%;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: navbarGradient 7s ease infinite;
+
+    transition: opacity 0.3s ease;
+
+    /* NO TEXT GLOW */
+    text-shadow: none !important;
+    filter: none !important;
+}
+
+.nav-menu a:hover {
+    opacity: 0.75;
+}
+
+/* ACTIVE UNDERLINE */
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+
+    bottom: -7px;
+    left: 0;
+
+    width: 0;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        #929B70,
+        #C6A96B,
+        #929B70
+    );
+
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+/* ==========================================
+   GRADIENT ANIMATION
+========================================== */
+
+@keyframes navbarGradient {
+    0% {
+        background-position: 0% center;
+    }
+
+    50% {
+        background-position: 100% center;
+    }
+
+    100% {
+        background-position: 0% center;
+    }
+}
+
+/* ==========================================
+   RIGHT SIDE ACTIONS
+========================================== */
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 32px;
+
+    flex-shrink: 0;
+}
+
+/* ==========================================
+   SEARCH BAR
+========================================== */
+
+.nav-search {
+    width: 250px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 14px 0 20px;
+
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(220, 218, 213, 0.85);
+    border-radius: 30px;
+
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.nav-search:focus-within {
+    border-color: #929B70;
+}
+
+.nav-search input {
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+
+    border: none;
+    outline: none;
+    background: transparent;
+
+    color: #333333;
+    font-family: inherit;
+    font-size: 13px;
+}
+
+.nav-search input::placeholder {
+    color: #999999;
+}
+
+.nav-search button {
+    width: 25px;
+    height: 25px;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    outline: none;
+    background: transparent;
+
+    cursor: pointer;
+    flex-shrink: 0;
+
+    box-shadow: none;
+    filter: none;
+}
+
+.nav-search button svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* ==========================================
+   ACCOUNT ICON
+========================================== */
+
+.nav-account {
+    width: 25px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    transition: transform 0.3s ease;
+
+    box-shadow: none;
+    filter: none;
+}
+
+.nav-account svg {
+    width: 23px;
+    height: 23px;
+}
+
+.nav-account:hover {
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   SHOPPING CART
+========================================== */
+
+.nav-cart {
+    width: 30px;
+    height: 32px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    transition: transform 0.3s ease;
+
+    box-shadow: none;
+    filter: none;
+}
+
+.nav-cart svg {
+    width: 25px;
+    height: 25px;
+}
+
+.nav-cart:hover {
+    transform: translateY(-2px);
+}
+
+/* CART COUNT */
+
+.nav-cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+
+    min-width: 17px;
+    height: 17px;
+    padding: 0 3px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        120deg,
+        #929B70,
+        #C6A96B,
+        #929B70
+    );
+
+    background-size: 200% 100%;
+
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: 600;
+
+    box-sizing: border-box;
+
+    animation: navbarGradient 5s ease infinite;
+
+    box-shadow: none;
+    text-shadow: none;
+}
+
+/* ==========================================
+   MOBILE MENU BUTTON
+========================================== */
+
+.nav-toggle {
+    display: none;
+    padding: 5px;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    display: block;
+
+    width: 23px;
+    height: 1.5px;
+
+    margin: 5px 0;
+
+    background: #333333;
+    transition: 0.3s ease;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        padding: 0 4%;
+        gap: 20px;
+    }
+
+    .nav-logo span {
+        font-size: 21px;
+    }
+
+    .nav-menu {
+        gap: 22px;
+    }
+
+    .nav-right {
+        gap: 20px;
+    }
+
+    .nav-search {
+        width: 190px;
+    }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 750px) {
+
+    .navbar {
+        min-height: 75px;
+        padding: 0 5%;
+        gap: 12px;
+
+        background: rgba(247, 246, 242, 0.82);
+
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+    }
+
+    .nav-logo {
+        gap: 7px;
+    }
+
+    .nav-logo img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .nav-logo span {
+        font-size: 18px;
+    }
+
+    .nav-menu {
+        display: none;
+
+        position: absolute;
+        top: 75px;
+        left: 0;
+
+        width: 100%;
+        padding: 28px 0;
+
+        flex-direction: column;
+        gap: 27px;
+
+        background: rgba(247, 246, 242, 0.94);
+
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+
+        border-bottom: 1px solid rgba(220, 218, 213, 0.5);
+
+        box-shadow: none;
+    }
+
+    .nav-menu.nav-menu-active {
+        display: flex;
+    }
+
+    .nav-right {
+        margin-left: auto;
+        gap: 18px;
+    }
+
+    .nav-search {
+        display: none;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 380px) {
+
+    .nav-logo span {
+        font-size: 15px;
+    }
+
+    .nav-right {
+        gap: 13px;
+    }
+}
+
+/* ==========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .nav-logo span,
+    .nav-menu a,
+    .nav-cart-count {
+        animation: none;
+    }
+}

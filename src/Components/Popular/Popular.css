@@ -1,0 +1,281 @@
+
+/* ==========================================
+   LOUIS & SONS - SCROLL ANIMATED POPULAR
+========================================== */
+
+.popular {
+    width: 100%;
+    min-height: auto;
+    padding: 90px 8% 75px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: #F7F6F2;
+
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* ==========================================
+   SCROLL REVEAL SYSTEM
+========================================== */
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(35px);
+}
+
+.scroll-reveal.is-visible {
+    animation: scrollReveal 0.85s
+        cubic-bezier(0.2, 0.7, 0.2, 1)
+        var(--reveal-delay, 0ms) forwards;
+}
+
+@keyframes scrollReveal {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================
+   SECTION HEADER
+========================================== */
+
+.popular-header {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+/* EYEBROW */
+
+.popular-eyebrow {
+    color: #929B70;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+    margin-bottom: 16px;
+}
+
+/* HEADING */
+
+.popular-header h1 {
+    margin: 0;
+
+    color: #171717;
+
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 700;
+
+    letter-spacing: -1.8px;
+    line-height: 1.2;
+}
+
+.popular-header h1 span {
+    color: #929B70;
+}
+
+/* HEADING LINE */
+
+.popular-heading-line {
+    width: 55px;
+    height: 2px;
+
+    margin-top: 22px;
+
+    background: #929B70;
+}
+
+/* DESCRIPTION */
+
+.popular-header p {
+    max-width: 450px;
+
+    margin: 20px 0 0;
+
+    color: #77756F;
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* ==========================================
+   PRODUCT GRID
+========================================== */
+
+.popular-item {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 24px;
+    margin-top: 0;
+
+    align-items: start;
+}
+
+/* PRODUCT CARD */
+
+.popular-card {
+    width: 100%;
+    min-width: 0;
+
+    transition: transform 0.4s ease;
+}
+
+.popular-card.is-visible {
+    animation-delay: var(--reveal-delay, 0ms);
+}
+
+.popular-card:hover {
+    transform: translateY(-5px);
+}
+
+.popular-card .item {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   SECTION FOOTER
+========================================== */
+
+.popular-footer {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+    margin-top: 65px;
+
+    color: #929087;
+
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.popular-footer-line {
+    width: 45px;
+    height: 1px;
+
+    background: #B4B19F;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .popular {
+        padding: 75px 5% 65px;
+    }
+
+    .popular-item {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px 22px;
+    }
+
+    .popular-header {
+        margin-bottom: 40px;
+    }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 650px) {
+
+    .popular {
+        padding: 60px 6% 50px;
+    }
+
+    .popular-header {
+        margin-bottom: 35px;
+    }
+
+    .popular-header h1 {
+        font-size: 29px;
+        letter-spacing: -1px;
+    }
+
+    .popular-header p {
+        font-size: 12px;
+        max-width: 320px;
+    }
+
+    .popular-item {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px 14px;
+    }
+
+    .popular-footer {
+        margin-top: 45px;
+        font-size: 8px;
+    }
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 380px) {
+
+    .popular {
+        padding: 45px 5% 40px;
+    }
+
+    .popular-header h1 {
+        font-size: 25px;
+    }
+
+    .popular-item {
+        gap: 20px 10px;
+    }
+
+    .popular-eyebrow {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .popular .scroll-reveal {
+        opacity: 1;
+        transform: none;
+        animation: none !important;
+    }
+
+    .popular-card {
+        transition: none;
+    }
+}
